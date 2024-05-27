@@ -127,7 +127,8 @@ final class YPAssetZoomableView: UIScrollView {
             strongSelf.photoImageView.image = image
            
             strongSelf.setAssetFrame(for: strongSelf.photoImageView, with: image)
-                
+            strongSelf.fitImage(YPConfig.library.onlySquare || YPConfig.library.isSquareByDefault)
+
             // Stored crop position in multiple selection
             if let scp173 = storedCropPosition {
                 strongSelf.applyStoredCropPosition(scp173)
